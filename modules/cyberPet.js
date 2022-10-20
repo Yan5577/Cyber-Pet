@@ -151,7 +151,7 @@ const fnx = () => {
 
   const ui = document.getElementById("main-ui");
 
-  ui.style.display = "block";
+  ui.style.display = "flex";
 
   gamestart();
 };
