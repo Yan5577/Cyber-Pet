@@ -1,7 +1,5 @@
 const {Animal, Tiger, Rabbit, Mouse, Stat} = require('./animals.js')
 
-
-
 //Testing
 
 const Test1 = new Tiger("bob");
@@ -19,4 +17,4 @@ console.log(Test3.changeStat('Hunger', 20));
 console.log(Test3.statistics[0].value)
 
 console.log(Test3.getStat('Thirst'))
-
+clear

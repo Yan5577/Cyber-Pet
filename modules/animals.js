@@ -38,9 +38,6 @@ class Tiger extends Animal {
         ];
         this.endLabel = `${name} ate you and roamed free`
     }
-
-   
-
 }
 
 class Rabbit extends Animal {
