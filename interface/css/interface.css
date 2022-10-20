@@ -1,0 +1,68 @@
+ui{
+    width:600px;
+    display:flex;
+    flex-direction: column;
+    margin:20px;
+    margin-left:auto;
+    margin-right:auto;
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
+interface{
+    width:600px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left:auto;
+    margin-right:auto;
+   
+}
+
+
+statDisplay {
+    width:600px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+statcontainer{
+    width:100%;
+    display:block;
+    height:30px;
+    margin:10px;
+    
+}
+
+statcontainer .label{
+    margin-top:-30px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+statdisplay statbar{
+    width:100%;
+    display:block;
+    height:30px;
+   
+    border: 1px solid black;
+}
+
+statdisplay statbar gradbar{
+    height:100%;
+    background-color: cadetblue;
+    display:block;
+}
+
+
+interface button{
+    width:100px;
+    margin:20px;
+}
