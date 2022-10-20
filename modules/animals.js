@@ -4,7 +4,6 @@ class Stat  {
         this.value = value,
         this.label = label
     }
-
 }
 
 class Animal{
@@ -17,15 +16,13 @@ class Animal{
         let toAdjust = this.statistics.find((s) => s.name === stat);
         toAdjust.value += value;
         if (toAdjust.value>100) toAdjust.value = 100;
+        if (toAdjust.value<0) toAdjust.value = 0;
         return [toAdjust.name, toAdjust.value];
     }
 
      getStat(value) { return (this.statistics.find((s) => s.name === value))}
 
-
 }
-
-
 
 class Tiger extends Animal {
     constructor(name,statistics){
@@ -71,4 +68,4 @@ class Mouse extends Animal {
     }
 }
 
-module.exports = {Animal, Tiger, Rabbit, Mouse, Stat};
+export {Animal, Tiger, Rabbit, Mouse, Stat};
