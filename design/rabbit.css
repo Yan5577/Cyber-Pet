@@ -1,23 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  
-}
-body {
-  text-align: center;
-}
-svg #leye , #reye {
+
+#rabbit #leye , .rabbit #reye {
   animation: shake 2.5s cubic-bezier(.36,.07,.19,.97) both infinite;
 }
 
-svg #bowtie {
+#rabbit #bowtie {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: dash 1s linear forwards infinite;
  }
 
- svg #wbody {
+ #rabbit #wbody {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
   animation: dash 1s linear forwards infinite;
@@ -28,7 +20,7 @@ svg #bowtie {
   }
  } */
 
- svg #tail {
+ #rabbit #tail {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;

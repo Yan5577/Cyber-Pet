@@ -1,20 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  
-}
-body {
-  text-align: center;
-}
 
-svg #rightear {
+
+#tiger #rightear {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: dash 1s linear forwards infinite;
  }
 
- svg #leftear {
+ #tiger #leftear {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
   animation: dash 1s linear forwards infinite;
@@ -25,7 +17,7 @@ svg #rightear {
   }
  }
 
- svg #tail {
+ #tiger #tail {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
