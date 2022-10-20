@@ -145,6 +145,7 @@ for (let i=0; i<animals.length; i++){
 const fnx = () => {
 
   const name = document.getElementById("petName").value;
+  //added alert if no pet name
   if (!name) {
     window.alert("Error!!! Please provide pet name");
     return;
