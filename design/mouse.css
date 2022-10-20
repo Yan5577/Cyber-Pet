@@ -1,15 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  text-align: center;
-}
 
 
- svg #layer2, #reye, #leye {
+ #mouse #layer2, #reye, #leye {
   animation: shake 2s cubic-bezier(.36,.07,.19,.97) both infinite;
  }
 
