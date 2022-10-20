@@ -113,6 +113,11 @@ body{
     color: #4d43aa;
 }
 
+.selected{
+    border:10px solid fuchsia;
+}
+
+
 .inquiries{
     display: flex;
     justify-content: center;
