@@ -1,0 +1,229 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  background-image: url("/images/green-grass-13444388.jpg");
+}
+
+.game div {
+  width: 30cm;
+  background-color: gainsboro;
+  height: 10cm;
+  width: 10cm;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: centre;
+  margin: 0 auto;
+  width: 90%;
+  justify-content: space-evenly;
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+}
+
+.game h4 {
+  text-align: center;
+}
+
+.overlay {
+  display: flex;
+  background-image: url("/images/green-grass-13444388.jpg");
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 60px;
+  font-style: oblique;
+}
+
+.overlay.hide {
+  display: none;
+}
+
+.overlay button {
+  margin: 10px;
+  padding: 30px 50px;
+  font-family: avenir;
+  font-size: 30px;
+  color: white;
+  border-radius: 5px;
+  background-color: #cdeb22;
+  border: 5px solid #0c0c0c;
+  cursor: pointer;
+  box-shadow: 1px 1px 30px 1px black;
+}
+
+.overlay button:hover {
+  color: rgb(12, 12, 12);
+  border-radius: 10px;
+  background-color: #4d43aa;
+  border: 5px solid #9ce614e5;
+}
+
+#petSelection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2cm 2cm 2cm 9cm;
+  background-color: fuchsia;
+  height: 5rem;
+  width: 45rem;
+  padding: 0;
+  border-radius: 10%;
+  box-shadow: 1px 1px 30px 1px black;
+}
+
+#petSelection:hover {
+  color: rgb(12, 12, 12);
+  border-radius: 10%;
+  background-color: #c45858;
+  border: 2px solid #9ce614e5;
+}
+
+#petSelection h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: xx-large;
+  color: #4d43aa;
+}
+
+.animals h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  color: #4d43aa;
+}
+
+.inquiries ,#pet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2cm 2cm 2cm 9cm;
+  background-color: fuchsia;
+  height: 12rem;
+  width: 45rem;
+  padding: 0;
+  border-radius: 10%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 1px 1px 30px 1px black;
+}
+
+.inquiries:hover {
+  color: rgb(12, 12, 12);
+  border-radius: 10%;
+  background-color: #c45858;
+  border: 2px solid #9ce614e5;
+}
+
+.inquiries h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: #4d43aa;
+}
+
+.inquiries h1:hover {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 25px;
+  color: #010e1a;
+}
+
+.inquiries input {
+  height: 1.3cm;
+  width: 7cm;
+  border: 2px solid #9ce614e5;
+}
+
+.inquiries button {
+  height: 1.1cm;
+  width: 3cm;
+  font-family: avenir;
+  font-size: 15px;
+  color: #4d43aa;
+  border-radius: 10px;
+  background-color: #cdeb22;
+  border: 1px solid #0c0c0c;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px 1px black;
+}
+
+.inquiries button:hover {
+  color: rgb(12, 12, 12);
+  border-radius: 10px;
+  background-color: #1e8604;
+  border: 2px solid #9ce614e5;
+}
+
+ui {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  padding: 10px;
+  display: none;
+}
+
+interface {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+statDisplay {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+statcontainer {
+  width: 100%;
+  display: block;
+  height: 30px;
+  margin: 10px;
+}
+
+statcontainer .label {
+  margin-top: -30px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+statdisplay statbar {
+  width: 100%;
+  display: block;
+  height: 30px;
+
+  border: 1px solid black;
+}
+
+statdisplay statbar gradbar {
+  height: 100%;
+  background-color: cadetblue;
+  display: block;
+}
+
+interface button {
+  width: 100px;
+  margin: 20px;
+}
