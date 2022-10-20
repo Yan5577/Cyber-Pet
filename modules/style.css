@@ -164,7 +164,10 @@ body {
 }
 
 ui {
-  width: 600px;
+ 
+  width:700px;
+  background-color: white;
+  align-items: center;
   display: flex;
   flex-direction: column;
   margin: 20px;
