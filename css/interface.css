@@ -22,7 +22,6 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: centre;
- 
   width: 90%;
   justify-content: space-evenly;
  
@@ -160,17 +159,22 @@ body {
 
 ui {
  
-  width:700px;
-  background-color: white;
+  width:900px;
+  background-color: #b8e6bf;
   align-items: center;
   display: flex;
   flex-direction: column;
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border-radius: 50px;
   padding: 10px;
   display: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:#010e1a;
+  font-size: large;
+  font-style: oblique;
+  word-spacing: 10px;
 }
 
 interface {
@@ -191,6 +195,7 @@ statDisplay {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 10px;
 }
 
 statcontainer {
@@ -205,23 +210,43 @@ statcontainer .label {
   text-align: center;
   line-height: 30px;
   font-weight: 700;
+  color:gray;
+  font-family:Georgia, 'Times New Roman', Times, serif
 }
 
 statdisplay statbar {
   width: 100%;
   display: block;
   height: 30px;
-
-  border: 1px solid black;
+  border-radius: 20px;
+  border: 1px solid gray;
+  margin-top: 5px;
 }
 
 statdisplay statbar gradbar {
   height: 100%;
-  background-color: cadetblue;
+  background-color: #00a32a;
   display: block;
+  border-radius: 20px;
+  font-size: large;
 }
 
 interface button {
-  width: 100px;
-  margin: 20px;
+  width: 200px;;
+  margin: 10px;
+  border-radius: 25px;
+  background-color:#b8e6bf;
+  border: 3px solid #00a32a;
+  color: #010e1a;
+  font-size:medium;
+  padding-left:10px;
+  padding-right:10px;
+  min-height: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style:oblique;
+}
+
+interface button:hover{
+  cursor: pointer;;
+  font-weight: bold;
 }
