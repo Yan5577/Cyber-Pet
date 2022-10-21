@@ -54,7 +54,7 @@ const gamestart = () => {
 
       statBar.appendChild(gradBar);
 
-      console.log(stat);
+      // console.log(stat);
     });
   };
 
@@ -62,7 +62,7 @@ const gamestart = () => {
     for (let i = 0; i < gradBars.length; i++) {
       gradBars[i].style.width = `${cyberAnimal.statistics[i].value}%`;
       let e = isEnd();
-      console.log(`e=${e}`);
+      // console.log(`e=${e}`);
 
       const now = new Date().getTime();
       if ((clickTime + buttonLockout) < now) {
@@ -71,8 +71,8 @@ const gamestart = () => {
 
       if (isEnd() === true) {
         stopTimers();
-        console.log(cyberAnimal.endLabel);
-        console.log("game over");
+        // console.log(cyberAnimal.endLabel);
+        // console.log("game over");
         document.getElementById("playAgain").style.display = "flex";
       }
     }
@@ -166,7 +166,7 @@ const selectAnimal = (args) => {
   clearAnimalSelection();
   args.currentTarget.classList.add('selected')
   selectedAnimal = args.currentTarget.id;
-  console.log(selectedAnimal)
+  // console.log(selectedAnimal)
 }
 
 for (let i = 0; i < animals.length; i++) {
@@ -214,7 +214,7 @@ const fnx = () => {
 
 document.getElementById('playAgain').addEventListener("click", () => {
   document.getElementById('petName').value=""
-  console.log(cyberAnimal)
+  // console.log(cyberAnimal)
   document.getElementById("tiger").style.display = "flex";
   document.getElementById("mouse").style.display = "flex";
   document.getElementById("rabbit").style.display = "flex";
