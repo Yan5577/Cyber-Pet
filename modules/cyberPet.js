@@ -78,14 +78,16 @@ const gamestart = () => {
       cyberAnimal.statistics[randomStat].name,
       randomAmount
     );
+   
+    const name = document.getElementById("petName").value;
 
     const alive = cyberAnimal.isAlive();
     if (!alive) {
       document.getElementById(
         "petDisplay"
-      ).innerHTML = cyberAnimal.endLabel;
+      ).innerHTML = cyberAnimal.endLabel};
     }
-  };
+  
 
   const isEnd = () => {
     for (let i = 0; i < cyberAnimal.statistics.length; i++) {
@@ -120,34 +122,49 @@ const gamestart = () => {
   let devalueInterval = setInterval(devalue, devalueSpeed);
 };
 
+const animals = document.querySelectorAll('.animals')
+let selectedAnimal = "tiger";
+
+const clearAnimalSelection = ()=>{
+  for (let i=0; i<animals.length; i++){
+     animals[i].classList.remove('selected');
+  }
+}
+
+const selectAnimal =(args)=>{
+  clearAnimalSelection();
+  args.currentTarget.classList.add('selected')
+  selectedAnimal = args.currentTarget.id;
+  console.log(selectedAnimal)
+}
+
+for (let i=0; i<animals.length; i++){
+  animals[i].addEventListener('click', (event)=> selectAnimal(event));
+}
+
 const fnx = () => {
-  const tiger = document.getElementById("tiger");
-  const mouse = document.getElementById("mouse");
-  const rabbit = document.getElementById("rabbit");
 
-  const name = document.getElementById("petName");
-  console.log(name.value);
-  if (!name.value) {
-    alert("Please provide name");
+  const name = document.getElementById("petName").value;
+  //added alert if no pet name
+  if (!name) {
+    window.alert("Error!!! Please provide pet name");
     return;
   }
 
-  const petName = name.value;
-
-  if (tiger.checked) {
-    cyberAnimal = new Tiger(petName);
-  } else if (mouse.checked) {
-    cyberAnimal = new Mouse(petName);
-  } else if (rabbit.checked) {
-    cyberAnimal = new Rabbit(petName);
+  if (selectedAnimal== 'tiger') {
+    cyberAnimal = new Tiger(name);
+  } else if (selectedAnimal== 'mouse') {
+    cyberAnimal = new Mouse(name);
   } else {
-    alert("PLease select pet type");
-    return;
+    cyberAnimal = new Rabbit(name);
+    
   }
-
+  
   document.getElementById("petSelection").style.display = "none";
-  document.getElementById("pet").style.display = "none";
-  document.getElementById("name_section").style.display = "none";
+  document.getElementById("tiger").style.display = "none"
+  document.getElementById("rabbit").style.display = "none";
+  document.getElementById("mouse").style.display = "none";
+  document.getElementById("enquiry").style.display = "none";
 
   const ui = document.getElementById("main-ui");
 
