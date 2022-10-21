@@ -253,9 +253,9 @@ interface button {
 }
 
 interface button:hover{
-  cursor: pointer;;
-  font-weight: bold;
-
+  cursor: pointer;
+  background-color: rgb(16, 121, 22);
+  color: white;
 }
 
 .locked{
