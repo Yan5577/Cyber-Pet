@@ -1,6 +1,7 @@
 import { Animal, Tiger, Rabbit, Mouse, Stat } from "./animals.js";
 
 let cyberAnimal = null;
+document.getElementById("playAgain").style.display = "none";
 
 const gamestart = () => {
   //U.I. constants
@@ -18,6 +19,7 @@ const gamestart = () => {
 
   //Functions
   const buildAnimalControl = (controlAnimal) => {
+    ui.innerHTML=""
     controlAnimal.statistics.forEach((stat) => {
       //Add button
       let buttonCtr = document.createElement("button");
@@ -59,6 +61,7 @@ const gamestart = () => {
         stopTimers();
         console.log(cyberAnimal.endLabel);
         console.log("game over");
+        document.getElementById("playAgain").style.display = "flex";
       }
     }
   };
@@ -167,13 +170,28 @@ const fnx = () => {
   
   document.getElementById("petSelection").style.display = "none";
   document.getElementById("enquiry").style.display = "none";
-
+  
   const ui = document.getElementById("main-ui");
 
   ui.style.display = "flex";
+  document.getElementById("playAgain").style.display = "none";
 
   gamestart();
 };
+
+document.getElementById('playAgain').addEventListener("click",()=>{
+  cyberAnimal.name=null
+  document.getElementById("tiger").style.display = "flex";
+  document.getElementById("mouse").style.display = "flex";
+  document.getElementById("rabbit").style.display = "flex";
+  document.getElementById("enquiry").style.display = "flex";
+  document.getElementById("petSelection").style.display = "flex";
+  document.getElementById("playAgain").style.display = "none";
+
+  const ui = document.getElementById("main-ui");
+  ui.style.display = "none";
+
+})
 
 document.getElementById("submit").addEventListener("click", () => {
   fnx();
