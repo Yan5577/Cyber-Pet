@@ -1,5 +1,3 @@
-
-// //HTML elements
 // const overlay = document.querySelector('.overlay');
 // const animals = document.querySelectorAll('.animals')
 // const submit = document.getElementById('playButton')
