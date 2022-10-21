@@ -225,3 +225,7 @@ interface button {
   width: 100px;
   margin: 20px;
 }
+
+.locked{
+  opacity: .3;
+}
