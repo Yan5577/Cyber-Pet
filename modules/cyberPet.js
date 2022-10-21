@@ -148,17 +148,24 @@ const fnx = () => {
 
   if (selectedAnimal== 'tiger') {
     cyberAnimal = new Tiger(name);
+    document.getElementById("tiger").style.display = "flex";
+    document.getElementById("mouse").style.display = "none";
+    document.getElementById("rabbit").style.display = "none";
+
   } else if (selectedAnimal== 'mouse') {
     cyberAnimal = new Mouse(name);
+    document.getElementById("mouse").style.display = "flex";
+    document.getElementById("tiger").style.display = "none";
+    document.getElementById("rabbit").style.display = "none";
+
   } else {
     cyberAnimal = new Rabbit(name);
-    
+    document.getElementById("tiger").style.display = "none";
+    document.getElementById("mouse").style.display = "none";
+    document.getElementById("rabbit").style.display = "flex";  
   }
   
   document.getElementById("petSelection").style.display = "none";
-  document.getElementById("tiger").style.display = "none"
-  document.getElementById("rabbit").style.display = "none";
-  document.getElementById("mouse").style.display = "none";
   document.getElementById("enquiry").style.display = "none";
 
   const ui = document.getElementById("main-ui");
