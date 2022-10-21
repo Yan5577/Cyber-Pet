@@ -1,6 +1,7 @@
 import { Animal, Tiger, Rabbit, Mouse, Stat } from "./animals.js";
 
 let cyberAnimal = null;
+document.getElementById("playAgain").style.display = "none";
 
 const gamestart = () => {
   //U.I. constants
@@ -10,14 +11,22 @@ const gamestart = () => {
   const devalueSpeed = 100; //milliseconds
   const devalueMax = 5; //percentage
   const statGains = 10; //percentage stat increase
+  const buttonLockout = 1000; //milliseconds
   const gradBars = [];
 
+  //Game Variables
+  let clickTime = 0;
+  
   document.getElementById(
     "petDisplay"
   ).innerHTML = `Pet's Name: ${cyberAnimal.name}`;
 
+  
+
+
   //Functions
   const buildAnimalControl = (controlAnimal) => {
+    ui.innerHTML=""
     controlAnimal.statistics.forEach((stat) => {
       //Add button
       let buttonCtr = document.createElement("button");
@@ -55,10 +64,17 @@ const gamestart = () => {
       gradBars[i].style.width = `${cyberAnimal.statistics[i].value}%`;
       let e = isEnd();
       console.log(`e=${e}`);
+      
+      const now = new Date().getTime();
+      if ((clickTime+buttonLockout) < now){
+        unlockButtons();
+      }
+
       if (isEnd() === true) {
         stopTimers();
         console.log(cyberAnimal.endLabel);
         console.log("game over");
+        document.getElementById("playAgain").style.display = "flex";
       }
     }
   };
@@ -101,8 +117,28 @@ const gamestart = () => {
 
   //Events
   const buttonPressEvent = (args) => {
-    cyberAnimal.changeStat(args, statGains);
+    const now = new Date().getTime();
+    if ((clickTime+buttonLockout) < now){
+      cyberAnimal.changeStat(args, statGains);
+      clickTime = now;
+      lockButtons();
+    }
   };
+
+  const lockButtons = () => {
+      const buttons = ui.getElementsByTagName('button');
+      for (let i = 0; i<buttons.length; i++){
+        buttons[i].classList.add('locked')
+      }
+  }
+
+  const unlockButtons = () =>{
+    const buttons = ui.getElementsByTagName('button');
+    for (let i = 0; i<buttons.length; i++){
+      buttons[i].classList.remove('locked')
+    }
+  }
+
 
   //Program Flow
 
@@ -167,13 +203,28 @@ const fnx = () => {
   
   document.getElementById("petSelection").style.display = "none";
   document.getElementById("enquiry").style.display = "none";
-
+  
   const ui = document.getElementById("main-ui");
 
   ui.style.display = "flex";
+  document.getElementById("playAgain").style.display = "none";
 
   gamestart();
 };
+
+document.getElementById('playAgain').addEventListener("click",()=>{
+  cyberAnimal.name=null
+  document.getElementById("tiger").style.display = "flex";
+  document.getElementById("mouse").style.display = "flex";
+  document.getElementById("rabbit").style.display = "flex";
+  document.getElementById("enquiry").style.display = "flex";
+  document.getElementById("petSelection").style.display = "flex";
+  document.getElementById("playAgain").style.display = "none";
+
+  const ui = document.getElementById("main-ui");
+  ui.style.display = "none";
+
+})
 
 document.getElementById("submit").addEventListener("click", () => {
   fnx();
