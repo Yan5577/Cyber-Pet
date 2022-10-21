@@ -10,11 +10,18 @@ const gamestart = () => {
   const devalueSpeed = 100; //milliseconds
   const devalueMax = 5; //percentage
   const statGains = 10; //percentage stat increase
+  const buttonLockout = 1000; //milliseconds
   const gradBars = [];
 
+  //Game Variables
+  let clickTime = 0;
+  
   document.getElementById(
     "petDisplay"
   ).innerHTML = `Pet's Name: ${cyberAnimal.name}`;
+
+  
+
 
   //Functions
   const buildAnimalControl = (controlAnimal) => {
@@ -55,6 +62,12 @@ const gamestart = () => {
       gradBars[i].style.width = `${cyberAnimal.statistics[i].value}%`;
       let e = isEnd();
       console.log(`e=${e}`);
+      
+      const now = new Date().getTime();
+      if ((clickTime+buttonLockout) < now){
+        unlockButtons();
+      }
+
       if (isEnd() === true) {
         stopTimers();
         console.log(cyberAnimal.endLabel);
@@ -101,8 +114,28 @@ const gamestart = () => {
 
   //Events
   const buttonPressEvent = (args) => {
-    cyberAnimal.changeStat(args, statGains);
+    const now = new Date().getTime();
+    if ((clickTime+buttonLockout) < now){
+      cyberAnimal.changeStat(args, statGains);
+      clickTime = now;
+      lockButtons();
+    }
   };
+
+  const lockButtons = () => {
+      const buttons = ui.getElementsByTagName('button');
+      for (let i = 0; i<buttons.length; i++){
+        buttons[i].classList.add('locked')
+      }
+  }
+
+  const unlockButtons = () =>{
+    const buttons = ui.getElementsByTagName('button');
+    for (let i = 0; i<buttons.length; i++){
+      buttons[i].classList.remove('locked')
+    }
+  }
+
 
   //Program Flow
 
