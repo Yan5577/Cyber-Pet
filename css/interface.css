@@ -35,7 +35,7 @@ body {
 
 .overlay {
   display: flex;
-  background-image: url("/images/green-grass-13444388.jpg");
+  background-color: blue;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -45,6 +45,7 @@ body {
   left: 0;
   font-size: 60px;
   font-style: oblique;
+  background: transparent;
 }
 
 .overlay.hide {
@@ -82,6 +83,7 @@ body {
   padding: 0;
   border-radius: 10%;
   box-shadow: 1px 1px 30px 1px black;
+  text-align: center;
 }
 
 #petSelection:hover {
@@ -141,6 +143,12 @@ body {
   height: 1.3cm;
   width: 7cm;
   border: 2px solid #9ce614e5;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
 }
 
 .inquiries button {

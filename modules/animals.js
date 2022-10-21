@@ -75,3 +75,4 @@ class Mouse extends Animal {
 }
 
 export { Animal, Tiger, Rabbit, Mouse, Stat };
+

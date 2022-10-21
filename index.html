@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CyberPet</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/mouse.css">
     <link rel="stylesheet" href="./css/rabbit.css">
@@ -15,11 +15,12 @@
 
 <body>
 
-    <section>
+    <section id="container">
 
         <div id="petSelection">
             <h1>SELECT YOUR FAVOURITE ANIMAL</h1>
         </div>
+
         <div class="game" id="animalName">
             <div class="animals selected" id="tiger">
                 <h4>TIGER</h4>
@@ -231,23 +232,24 @@
             </interface>
 
         </ui>
+    
+
+
+        <section id="name_section">
+            <div class="inquiries" id="enquiry">
+                <h1>WHAT IS YOUR FAVOURITE ANIMAL CALLED?</h1>
+                <input id="petName" type="text">
+                <button id="submit">SUBMIT</button>
+            </div>
+        </section>
     </section>
 
 
-    <section id="name_section">
-        <div class="inquiries" id="enquiry">
-            <h1>WHAT IS YOUR FAVOURITE ANIMAL CALLED?</h1>
-            <input id="petName" type="text">
-            <button id="submit">SUBMIT</button>
-        </div>
-    </section>
 
-
-
-
-    <!-- <div class="overlay">
+<!-- 
+    <div class="overlay">
         <button>
-            <h4>START GAME</h4>
+            <h4>PLAY AGAIN</h4>
         </button>
     </div> -->
 

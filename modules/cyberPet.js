@@ -2,11 +2,6 @@ import { Animal, Tiger, Rabbit, Mouse, Stat } from "./animals.js";
 
 let cyberAnimal = null;
 
-// const overlay = document.querySelector(".overlay");
-// document.addEventListener("click", (e) => {
-//   overlay.classList.add("hide");
-// });
-
 const gamestart = () => {
   //U.I. constants
   const ui = document.getElementsByTagName("interface")[0];
@@ -176,6 +171,11 @@ const fnx = () => {
 document.getElementById("submit").addEventListener("click", () => {
   fnx();
 });
+
+// const overlay = document.querySelector(".overlay");
+// document.addEventListener("click", (e) => {
+//   overlay.classList.add("hide");
+// });
 
 // //Testing
 
