@@ -22,15 +22,22 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: centre;
-    margin: 0 auto;
+   
     width: 90%;
     justify-content: space-evenly;
-    margin-top: 2cm;
-    margin-bottom: 2cm;
+   
 }
 
 .game h4{
     text-align: center;
+}
+
+#container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height:100vh;
 }
 
 
@@ -75,16 +82,16 @@ body{
 
 
 #petSelection{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2cm 2cm 2cm 9cm;
+    display: block;
+    margin: 20px;  
     background-color: fuchsia;
     height: 5rem;
     width: 45rem;
     padding: 0;
     border-radius: 10%;
     box-shadow: 1px 1px 30px 1px black;
+    line-height: 5rem;
+    text-align: center;
 }
 
 #petSelection:hover{
@@ -122,7 +129,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2cm 2cm 2cm 9cm;
+    margin: 20px;
     background-color: fuchsia;
     height: 12rem;
     width: 45rem;
