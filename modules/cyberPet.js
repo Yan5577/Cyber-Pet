@@ -16,17 +16,16 @@ const gamestart = () => {
 
   //Game Variables
   let clickTime = 0;
-  
+
   document.getElementById(
     "petDisplay"
   ).innerHTML = `Pet's Name: ${cyberAnimal.name}`;
 
-  
-
 
   //Functions
   const buildAnimalControl = (controlAnimal) => {
-    ui.innerHTML=""
+    ui.innerHTML = ""
+    statDisplay.innerHTML = ""
     controlAnimal.statistics.forEach((stat) => {
       //Add button
       let buttonCtr = document.createElement("button");
@@ -64,9 +63,9 @@ const gamestart = () => {
       gradBars[i].style.width = `${cyberAnimal.statistics[i].value}%`;
       let e = isEnd();
       console.log(`e=${e}`);
-      
+
       const now = new Date().getTime();
-      if ((clickTime+buttonLockout) < now){
+      if ((clickTime + buttonLockout) < now) {
         unlockButtons();
       }
 
@@ -89,16 +88,17 @@ const gamestart = () => {
       cyberAnimal.statistics[randomStat].name,
       randomAmount
     );
-   
+
     const name = document.getElementById("petName").value;
 
     const alive = cyberAnimal.isAlive();
     if (!alive) {
       document.getElementById(
         "petDisplay"
-      ).innerHTML = cyberAnimal.endLabel};
-    }
-  
+      ).innerHTML = cyberAnimal.endLabel
+    };
+  }
+
 
   const isEnd = () => {
     for (let i = 0; i < cyberAnimal.statistics.length; i++) {
@@ -118,7 +118,7 @@ const gamestart = () => {
   //Events
   const buttonPressEvent = (args) => {
     const now = new Date().getTime();
-    if ((clickTime+buttonLockout) < now){
+    if ((clickTime + buttonLockout) < now) {
       cyberAnimal.changeStat(args, statGains);
       clickTime = now;
       lockButtons();
@@ -126,15 +126,15 @@ const gamestart = () => {
   };
 
   const lockButtons = () => {
-      const buttons = ui.getElementsByTagName('button');
-      for (let i = 0; i<buttons.length; i++){
-        buttons[i].classList.add('locked')
-      }
+    const buttons = ui.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.add('locked')
+    }
   }
 
-  const unlockButtons = () =>{
+  const unlockButtons = () => {
     const buttons = ui.getElementsByTagName('button');
-    for (let i = 0; i<buttons.length; i++){
+    for (let i = 0; i < buttons.length; i++) {
       buttons[i].classList.remove('locked')
     }
   }
@@ -156,21 +156,21 @@ const gamestart = () => {
 const animals = document.querySelectorAll('.animals')
 let selectedAnimal = "tiger";
 
-const clearAnimalSelection = ()=>{
-  for (let i=0; i<animals.length; i++){
-     animals[i].classList.remove('selected');
+const clearAnimalSelection = () => {
+  for (let i = 0; i < animals.length; i++) {
+    animals[i].classList.remove('selected');
   }
 }
 
-const selectAnimal =(args)=>{
+const selectAnimal = (args) => {
   clearAnimalSelection();
   args.currentTarget.classList.add('selected')
   selectedAnimal = args.currentTarget.id;
   console.log(selectedAnimal)
 }
 
-for (let i=0; i<animals.length; i++){
-  animals[i].addEventListener('click', (event)=> selectAnimal(event));
+for (let i = 0; i < animals.length; i++) {
+  animals[i].addEventListener('click', (event) => selectAnimal(event));
 }
 
 const fnx = () => {
@@ -182,13 +182,13 @@ const fnx = () => {
     return;
   }
 
-  if (selectedAnimal== 'tiger') {
+  if (selectedAnimal == 'tiger') {
     cyberAnimal = new Tiger(name);
     document.getElementById("tiger").style.display = "flex";
     document.getElementById("mouse").style.display = "none";
     document.getElementById("rabbit").style.display = "none";
 
-  } else if (selectedAnimal== 'mouse') {
+  } else if (selectedAnimal == 'mouse') {
     cyberAnimal = new Mouse(name);
     document.getElementById("mouse").style.display = "flex";
     document.getElementById("tiger").style.display = "none";
@@ -198,12 +198,12 @@ const fnx = () => {
     cyberAnimal = new Rabbit(name);
     document.getElementById("tiger").style.display = "none";
     document.getElementById("mouse").style.display = "none";
-    document.getElementById("rabbit").style.display = "flex";  
+    document.getElementById("rabbit").style.display = "flex";
   }
-  
+
   document.getElementById("petSelection").style.display = "none";
   document.getElementById("enquiry").style.display = "none";
-  
+
   const ui = document.getElementById("main-ui");
 
   ui.style.display = "flex";
@@ -212,8 +212,9 @@ const fnx = () => {
   gamestart();
 };
 
-document.getElementById('playAgain').addEventListener("click",()=>{
-  cyberAnimal.name=null
+document.getElementById('playAgain').addEventListener("click", () => {
+  document.getElementById('petName').value=""
+  console.log(cyberAnimal)
   document.getElementById("tiger").style.display = "flex";
   document.getElementById("mouse").style.display = "flex";
   document.getElementById("rabbit").style.display = "flex";
